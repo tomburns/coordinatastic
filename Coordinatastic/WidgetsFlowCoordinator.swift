@@ -18,6 +18,11 @@ protocol WidgetsFlowCoordinatorType: FlowCoordinatorType {
 }
 
 final class WidgetsFlowCoordinator: WidgetsFlowCoordinatorType {
+
+    var rootViewController: UIViewController {
+        return navigationController
+    }
+    
     private let navigationController: UINavigationController
 
     private let widgetController = WidgetController()

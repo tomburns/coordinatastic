@@ -114,13 +114,23 @@ class AppCoordinator: AppCoordinatorType, FlowCoordinatorType {
 
     private func switchTabsIfNeeded(destinationTab: MainTab, animated: Bool) {
         if tabBarController.selectedIndex != destinationTab.index {
-            resetAllFlows(animated: animated)
+            dismissAllPresentedViewControllers(animated: animated)
             tabBarController.selectedIndex = destinationTab.index
         }
     }
 
+    private func dismissAllPresentedViewControllers(animated animated: Bool) {
+        self.dismissPresentedViewController(animated: animated)
+        widgetCoordinator.dismissPresentedViewController(animated: animated)
+        sprocketCoordinator.dismissPresentedViewController(animated: animated)
+    }
+
     private func resetAllFlows(animated animated: Bool) {
+        dismissAllPresentedViewControllers(animated: animated)
+
         widgetCoordinator.showList(animated: animated)
+
+        // other logic would go here
     }
 
     private func urlContainsAnimationFlag(url: NSURL) -> Bool {

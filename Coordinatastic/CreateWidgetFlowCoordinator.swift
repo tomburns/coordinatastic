@@ -15,9 +15,13 @@ protocol CreateWidgetFlowCoordinatorType: FlowCoordinatorType {
 
 final class CreateWidgetFlowCoordinator: CreateWidgetFlowCoordinatorType {
 
-    weak var presentationContext: UIViewController?
+    var rootViewController: UIViewController {
+        return navigationController
+    }
 
-    private var navigationController: UINavigationController?
+    private weak var presentationContext: UIViewController?
+
+    private var navigationController = UINavigationController()
 
     private var widgetController: WidgetControllerType
 
@@ -41,6 +45,6 @@ final class CreateWidgetFlowCoordinator: CreateWidgetFlowCoordinatorType {
     }
 
     func cancel(animated animated: Bool) {
-        navigationController?.dismissViewControllerAnimated(animated, completion: nil)
+        navigationController.dismissViewControllerAnimated(animated, completion: nil)
     }
 }

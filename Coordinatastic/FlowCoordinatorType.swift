@@ -9,5 +9,15 @@
 import UIKit
 
 protocol FlowCoordinatorType: class {
+    var rootViewController: UIViewController { get }
+
     func start()
+
+    func dismissPresentedViewController(animated animated: Bool)
+}
+
+extension FlowCoordinatorType {
+    func dismissPresentedViewController(animated animated: Bool) {
+        rootViewController.presentedViewController?.dismissViewControllerAnimated(animated, completion: nil)
+    }
 }
