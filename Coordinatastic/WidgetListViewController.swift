@@ -17,7 +17,7 @@ class WidgetListViewController: UIViewController {
     weak var coordinator: WidgetsFlowCoordinatorType?
 
     @IBAction func createWidget(sender: AnyObject) {
-        coordinator?.showCreateWidget()
+        coordinator?.showCreateWidget(animated: true)
     }
 
     @IBAction func showFirst(sender: AnyObject) {

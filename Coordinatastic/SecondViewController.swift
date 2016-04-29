@@ -20,6 +20,11 @@ class SecondViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBAction func createWidget(sender: AnyObject) {
+        let url = AppDestination.CreateWidget.navigationURL()
+
+        UIApplication.sharedApplication().openURL(url)
+    }
 
 }
 

@@ -10,11 +10,14 @@ import UIKit
 
 protocol CreateWidgetFlowCoordinatorType: FlowCoordinatorType {
     init(presentationContext: UIViewController, widgetController: WidgetControllerType)
+    func cancel(animated animated: Bool)
 }
 
 final class CreateWidgetFlowCoordinator: CreateWidgetFlowCoordinatorType {
 
     weak var presentationContext: UIViewController?
+
+    private var navigationController: UINavigationController?
 
     private var widgetController: WidgetControllerType
 
@@ -25,13 +28,19 @@ final class CreateWidgetFlowCoordinator: CreateWidgetFlowCoordinatorType {
     }
 
     func start() {
-        guard let navController = R.storyboard.createWidget.navigationController(),
-            let initialViewController = R.storyboard.createWidget.rootCreationViewController() else {
+        guard let initialViewController = R.storyboard.createWidget.rootCreationViewController() else {
             preconditionFailure()
         }
 
-        navController.viewControllers = [initialViewController]
+        let navigationController = UINavigationController(rootViewController: initialViewController)
 
-        presentationContext?.presentViewController(navController, animated: true, completion: nil)
+        self.navigationController = navigationController
+        initialViewController.coordinator = self
+
+        presentationContext?.presentViewController(navigationController, animated: true, completion: nil)
+    }
+
+    func cancel(animated animated: Bool) {
+        navigationController?.dismissViewControllerAnimated(animated, completion: nil)
     }
 }

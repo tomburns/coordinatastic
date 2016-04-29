@@ -16,6 +16,19 @@ protocol AppCoordinatorType {
 
 class AppCoordinator: AppCoordinatorType, FlowCoordinatorType {
 
+    enum MainTab {
+        case Widget
+        case Sprocket
+
+        var index: Int {
+            switch self {
+            case .Widget:
+                return 0
+            case .Sprocket:
+                return 1
+            }
+        }
+    }
     var rootViewController: UIViewController {
         return tabBarController
     }
@@ -53,32 +66,66 @@ class AppCoordinator: AppCoordinatorType, FlowCoordinatorType {
         sprocketCoordinator.start()
     }
 
+    //MARK: URL Handling
+
     func openURL(url: NSURL) -> Bool {
-
-        guard let urlComponents = NSURLComponents(URL: url, resolvingAgainstBaseURL: false) else {
-            return false
-        }
-
-        switch urlComponents.host {
+        switch url.host {
         case .Some("widget"):
-            let animated = urlComponentsContainAnimationFlag(urlComponents)
-
-            tabBarController.selectedIndex = 0
-
-            if let pathComponents = url.pathComponents,
-                let widgetIDString = pathComponents.last,
-                let widgetID = Int(widgetIDString) {
-                widgetCoordinator.showDetail(id: widgetID, animated: animated)
-            }
-
+            handleWidgetURL(url)
+            return true
+        case .Some("sprocket"):
+            handleSprocketURL(url)
             return true
         default:
             return false
         }
     }
 
-    private func urlComponentsContainAnimationFlag(urlComponents: NSURLComponents) -> Bool {
-        guard let queryItems = urlComponents.queryItems else {
+    private func handleWidgetURL(url: NSURL) {
+        precondition(url.host == "widget")
+
+        let animated = urlContainsAnimationFlag(url)
+
+        switchTabsIfNeeded(.Widget, animated: animated)
+
+        if let pathComponents = url.pathComponents,
+            let widgetPathString = pathComponents.last {
+
+            if let id = Int(widgetPathString) {
+                widgetCoordinator.showDetail(id: id, animated: animated)
+            } else if widgetPathString == "create" {
+                widgetCoordinator.showCreateWidget(animated: animated)
+            }
+
+        }
+
+    }
+
+    private func handleSprocketURL(url: NSURL) {
+        precondition(url.host == "sprocket")
+
+        let animated = urlContainsAnimationFlag(url)
+
+        switchTabsIfNeeded(.Sprocket, animated: animated)
+
+    }
+
+
+
+    private func switchTabsIfNeeded(destinationTab: MainTab, animated: Bool) {
+        if tabBarController.selectedIndex != destinationTab.index {
+            resetAllFlows(animated: animated)
+            tabBarController.selectedIndex = destinationTab.index
+        }
+    }
+
+    private func resetAllFlows(animated animated: Bool) {
+        widgetCoordinator.showList(animated: animated)
+    }
+
+    private func urlContainsAnimationFlag(url: NSURL) -> Bool {
+        guard let urlComponents = NSURLComponents(URL: url, resolvingAgainstBaseURL: false),
+            let queryItems = urlComponents.queryItems else {
             return false
         }
 

@@ -31,40 +31,36 @@
                                     <action selector="openAnimatedURL:" destination="ESb-XQ-Fat" eventType="touchUpInside" id="926-qT-jHZ"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5dN-cg-dFH">
+                                <rect key="frame" x="243" y="361" width="114" height="30"/>
+                                <state key="normal" title="coord://sprocket"/>
+                                <connections>
+                                    <action selector="openSprocketURL:" destination="ESb-XQ-Fat" eventType="touchUpInside" id="df7-KZ-8EQ"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="5dN-cg-dFH" firstAttribute="top" secondItem="Y0a-Aj-jL2" secondAttribute="bottom" constant="8" id="DGH-GC-v7Q"/>
                             <constraint firstItem="Y0a-Aj-jL2" firstAttribute="centerX" secondItem="TVm-UD-uCa" secondAttribute="centerX" id="GkW-wH-SdM"/>
+                            <constraint firstItem="5dN-cg-dFH" firstAttribute="centerX" secondItem="Y0a-Aj-jL2" secondAttribute="centerX" id="J31-Pb-jwk"/>
                             <constraint firstItem="zUq-ZB-dvc" firstAttribute="centerX" secondItem="TVm-UD-uCa" secondAttribute="centerX" id="NhN-eg-Hg7"/>
                             <constraint firstItem="zUq-ZB-dvc" firstAttribute="centerY" secondItem="TVm-UD-uCa" secondAttribute="centerY" id="R4z-Xm-2x4"/>
                             <constraint firstItem="Y0a-Aj-jL2" firstAttribute="top" secondItem="zUq-ZB-dvc" secondAttribute="bottom" constant="8" id="XDk-5z-jyd"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="1r7-ai-tS1">
-                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="IKi-aR-l2W"/>
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="IKi-aR-l2W">
+                            <connections>
+                                <action selector="cancel:" destination="ESb-XQ-Fat" id="Dmj-fx-JYA"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" prompted="NO"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PZS-tv-6A5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1380" y="457"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="a5t-3q-heQ">
-            <objects>
-                <navigationController storyboardIdentifier="NavigationController" automaticallyAdjustsScrollViewInsets="NO" id="N6g-rF-WcO" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mo2-cU-0uS">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="ESb-XQ-Fat" kind="relationship" relationship="rootViewController" id="ivp-w4-qgd"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="gAV-3N-GyB" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="568" y="457"/>
         </scene>
     </scenes>
 </document>

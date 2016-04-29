@@ -12,14 +12,17 @@ import UIKit
 protocol WidgetsFlowCoordinatorType: FlowCoordinatorType {
     init(navigationController: UINavigationController)
 
+    func showList(animated animated: Bool)
     func showDetail(id id: Int, animated: Bool)
-    func showCreateWidget()
+    func showCreateWidget(animated animated: Bool)
 }
 
 final class WidgetsFlowCoordinator: WidgetsFlowCoordinatorType {
     private let navigationController: UINavigationController
 
     private let widgetController = WidgetController()
+
+    private var currentCreateFlowCoordinator: CreateWidgetFlowCoordinatorType?
 
     required init(navigationController: UINavigationController) {
         self.navigationController = navigationController
@@ -41,7 +44,7 @@ final class WidgetsFlowCoordinator: WidgetsFlowCoordinatorType {
             return
         }
 
-        prepareToShowDetail(animated: animated) { [navigationController] in
+        returnToList(animated: animated) { [navigationController] in
             let viewModel = WidgetDetailViewModel(widget: widget)
 
             guard let detailViewController = R.storyboard.widgets.widgetDetailViewController() else {
@@ -55,13 +58,24 @@ final class WidgetsFlowCoordinator: WidgetsFlowCoordinatorType {
         }
     }
 
-    func showCreateWidget() {
+    func showCreateWidget(animated animated: Bool) {
+        if currentCreateFlowCoordinator != nil {
+            currentCreateFlowCoordinator?.cancel(animated: false)
+            currentCreateFlowCoordinator = nil
+        }
+
         let creationCoordinator = CreateWidgetFlowCoordinator(presentationContext: navigationController, widgetController: widgetController)
+
+        self.currentCreateFlowCoordinator = creationCoordinator
 
         creationCoordinator.start()
     }
 
-    private func prepareToShowDetail(animated animated: Bool, completion: (() -> ())?) {
+    func showList(animated animated: Bool) {
+        returnToList(animated: animated, completion: nil)
+    }
+
+    private func returnToList(animated animated: Bool, completion: (() -> ())?) {
 
         if navigationController.visibleViewController != navigationController.viewControllers[0] {
             navigationController.popToRootViewControllerAnimated(animated)
@@ -72,7 +86,5 @@ final class WidgetsFlowCoordinator: WidgetsFlowCoordinatorType {
         } else {
             completion?()
         }
-
-
     }
 }

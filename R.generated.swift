@@ -148,12 +148,7 @@ struct _R: Rswift.Validatable {
     struct createWidget: StoryboardResourceType, Rswift.Validatable {
       let bundle = _R.hostingBundle
       let name = "CreateWidget"
-      let navigationController = StoryboardViewControllerResource<UINavigationController>(identifier: "NavigationController")
       let rootCreationViewController = StoryboardViewControllerResource<CreateWidgetViewController>(identifier: "RootCreationViewController")
-      
-      func navigationController(_: Void) -> UINavigationController? {
-        return UIStoryboard(resource: self).instantiateViewController(navigationController)
-      }
       
       func rootCreationViewController(_: Void) -> CreateWidgetViewController? {
         return UIStoryboard(resource: self).instantiateViewController(rootCreationViewController)
@@ -161,7 +156,6 @@ struct _R: Rswift.Validatable {
       
       static func validate() throws {
         if _R.storyboard.createWidget().rootCreationViewController() == nil { throw ValidationError(description:"[R.swift] ViewController with identifier 'rootCreationViewController' could not be loaded from storyboard 'CreateWidget' as 'CreateWidgetViewController'.") }
-        if _R.storyboard.createWidget().navigationController() == nil { throw ValidationError(description:"[R.swift] ViewController with identifier 'navigationController' could not be loaded from storyboard 'CreateWidget' as 'UINavigationController'.") }
       }
       
       private init() {}
