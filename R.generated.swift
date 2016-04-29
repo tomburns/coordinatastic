@@ -63,17 +63,43 @@ struct R: Rswift.Validatable {
     private init() {}
   }
   
-  /// This `R.segue` struct is generated, and contains static references to 0 view controllers.
+  /// This `R.segue` struct is generated, and contains static references to 1 view controllers.
   struct segue {
+    /// This struct is generated for `WidgetListViewController`, and contains static references to 1 segues.
+    struct widgetListViewController {
+      /// Segue identifier `ShowWidgetDetailFromList`.
+      static let showWidgetDetailFromList: StoryboardSegueIdentifier<UIStoryboardSegue, WidgetListViewController, WidgetDetailViewController> = StoryboardSegueIdentifier(identifier: "ShowWidgetDetailFromList")
+      
+      /// Optionally returns a typed version of segue `ShowWidgetDetailFromList`.
+      /// Returns nil if either the segue identifier, the source, destination, or segue types don't match.
+      /// For use inside `prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?)`.
+      static func showWidgetDetailFromList(segue segue: UIStoryboardSegue) -> TypedStoryboardSegueInfo<UIStoryboardSegue, WidgetListViewController, WidgetDetailViewController>? {
+        return TypedStoryboardSegueInfo(segueIdentifier: R.segue.widgetListViewController.showWidgetDetailFromList, segue: segue)
+      }
+      
+      private init() {}
+    }
+    
     private init() {}
   }
   
-  /// This `R.storyboard` struct is generated, and contains static references to 2 storyboards.
+  /// This `R.storyboard` struct is generated, and contains static references to 5 storyboards.
   struct storyboard {
+    /// Storyboard `CreateWidget`.
+    static let createWidget = _R.storyboard.createWidget()
     /// Storyboard `LaunchScreen`.
     static let launchScreen = _R.storyboard.launchScreen()
     /// Storyboard `Main`.
     static let main = _R.storyboard.main()
+    /// Storyboard `Sprockets`.
+    static let sprockets = _R.storyboard.sprockets()
+    /// Storyboard `Widgets`.
+    static let widgets = _R.storyboard.widgets()
+    
+    /// `UIStoryboard(name: "CreateWidget", bundle: ...)`
+    static func createWidget(_: Void) -> UIStoryboard {
+      return UIStoryboard(resource: R.storyboard.createWidget)
+    }
     
     /// `UIStoryboard(name: "LaunchScreen", bundle: ...)`
     static func launchScreen(_: Void) -> UIStoryboard {
@@ -83,6 +109,16 @@ struct R: Rswift.Validatable {
     /// `UIStoryboard(name: "Main", bundle: ...)`
     static func main(_: Void) -> UIStoryboard {
       return UIStoryboard(resource: R.storyboard.main)
+    }
+    
+    /// `UIStoryboard(name: "Sprockets", bundle: ...)`
+    static func sprockets(_: Void) -> UIStoryboard {
+      return UIStoryboard(resource: R.storyboard.sprockets)
+    }
+    
+    /// `UIStoryboard(name: "Widgets", bundle: ...)`
+    static func widgets(_: Void) -> UIStoryboard {
+      return UIStoryboard(resource: R.storyboard.widgets)
     }
     
     private init() {}
@@ -104,7 +140,31 @@ struct _R: Rswift.Validatable {
   
   struct storyboard: Rswift.Validatable {
     static func validate() throws {
+      try widgets.validate()
       try main.validate()
+      try createWidget.validate()
+    }
+    
+    struct createWidget: StoryboardResourceType, Rswift.Validatable {
+      let bundle = _R.hostingBundle
+      let name = "CreateWidget"
+      let navigationController = StoryboardViewControllerResource<UINavigationController>(identifier: "NavigationController")
+      let rootCreationViewController = StoryboardViewControllerResource<CreateWidgetViewController>(identifier: "RootCreationViewController")
+      
+      func navigationController(_: Void) -> UINavigationController? {
+        return UIStoryboard(resource: self).instantiateViewController(navigationController)
+      }
+      
+      func rootCreationViewController(_: Void) -> CreateWidgetViewController? {
+        return UIStoryboard(resource: self).instantiateViewController(rootCreationViewController)
+      }
+      
+      static func validate() throws {
+        if _R.storyboard.createWidget().rootCreationViewController() == nil { throw ValidationError(description:"[R.swift] ViewController with identifier 'rootCreationViewController' could not be loaded from storyboard 'CreateWidget' as 'CreateWidgetViewController'.") }
+        if _R.storyboard.createWidget().navigationController() == nil { throw ValidationError(description:"[R.swift] ViewController with identifier 'navigationController' could not be loaded from storyboard 'CreateWidget' as 'UINavigationController'.") }
+      }
+      
+      private init() {}
     }
     
     struct launchScreen: StoryboardResourceWithInitialControllerType {
@@ -121,10 +181,59 @@ struct _R: Rswift.Validatable {
       
       let bundle = _R.hostingBundle
       let name = "Main"
+      let rootTabBarController = StoryboardViewControllerResource<UITabBarController>(identifier: "RootTabBarController")
+      let sprocketsNavigationController = StoryboardViewControllerResource<UINavigationController>(identifier: "SprocketsNavigationController")
+      let widgetsNavigationController = StoryboardViewControllerResource<UINavigationController>(identifier: "WidgetsNavigationController")
+      
+      func rootTabBarController(_: Void) -> UITabBarController? {
+        return UIStoryboard(resource: self).instantiateViewController(rootTabBarController)
+      }
+      
+      func sprocketsNavigationController(_: Void) -> UINavigationController? {
+        return UIStoryboard(resource: self).instantiateViewController(sprocketsNavigationController)
+      }
       
       static func validate() throws {
-        if UIImage(named: "first") == nil { throw ValidationError(description: "[R.swift] Image named 'first' is used in storyboard 'Main', but couldn't be loaded.") }
-        if UIImage(named: "second") == nil { throw ValidationError(description: "[R.swift] Image named 'second' is used in storyboard 'Main', but couldn't be loaded.") }
+        if _R.storyboard.main().rootTabBarController() == nil { throw ValidationError(description:"[R.swift] ViewController with identifier 'rootTabBarController' could not be loaded from storyboard 'Main' as 'UITabBarController'.") }
+        if _R.storyboard.main().widgetsNavigationController() == nil { throw ValidationError(description:"[R.swift] ViewController with identifier 'widgetsNavigationController' could not be loaded from storyboard 'Main' as 'UINavigationController'.") }
+        if _R.storyboard.main().sprocketsNavigationController() == nil { throw ValidationError(description:"[R.swift] ViewController with identifier 'sprocketsNavigationController' could not be loaded from storyboard 'Main' as 'UINavigationController'.") }
+      }
+      
+      func widgetsNavigationController(_: Void) -> UINavigationController? {
+        return UIStoryboard(resource: self).instantiateViewController(widgetsNavigationController)
+      }
+      
+      private init() {}
+    }
+    
+    struct sprockets: StoryboardResourceWithInitialControllerType {
+      typealias InitialController = SecondViewController
+      
+      let bundle = _R.hostingBundle
+      let name = "Sprockets"
+      
+      private init() {}
+    }
+    
+    struct widgets: StoryboardResourceWithInitialControllerType, Rswift.Validatable {
+      typealias InitialController = WidgetListViewController
+      
+      let bundle = _R.hostingBundle
+      let name = "Widgets"
+      let widgetDetailViewController = StoryboardViewControllerResource<WidgetDetailViewController>(identifier: "WidgetDetailViewController")
+      let widgetListViewController = StoryboardViewControllerResource<WidgetListViewController>(identifier: "WidgetListViewController")
+      
+      static func validate() throws {
+        if _R.storyboard.widgets().widgetListViewController() == nil { throw ValidationError(description:"[R.swift] ViewController with identifier 'widgetListViewController' could not be loaded from storyboard 'Widgets' as 'WidgetListViewController'.") }
+        if _R.storyboard.widgets().widgetDetailViewController() == nil { throw ValidationError(description:"[R.swift] ViewController with identifier 'widgetDetailViewController' could not be loaded from storyboard 'Widgets' as 'WidgetDetailViewController'.") }
+      }
+      
+      func widgetDetailViewController(_: Void) -> WidgetDetailViewController? {
+        return UIStoryboard(resource: self).instantiateViewController(widgetDetailViewController)
+      }
+      
+      func widgetListViewController(_: Void) -> WidgetListViewController? {
+        return UIStoryboard(resource: self).instantiateViewController(widgetListViewController)
       }
       
       private init() {}

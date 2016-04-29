@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <scenes>
+        <!--Create Widget View Controller-->
+        <scene sceneID="Vjj-6p-wYC">
+            <objects>
+                <viewController storyboardIdentifier="RootCreationViewController" id="ESb-XQ-Fat" customClass="CreateWidgetViewController" customModule="Coordinatastic" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="6IN-Kz-7Xl"/>
+                        <viewControllerLayoutGuide type="bottom" id="PzU-5i-LMl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="TVm-UD-uCa">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zUq-ZB-dvc">
+                                <rect key="frame" x="181" y="285" width="238" height="30"/>
+                                <state key="normal" title="just kidding, open coord://widget/1"/>
+                                <connections>
+                                    <action selector="openURL:" destination="ESb-XQ-Fat" eventType="touchUpInside" id="Noc-Bv-gCh"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y0a-Aj-jL2">
+                                <rect key="frame" x="146" y="323" width="309" height="30"/>
+                                <state key="normal" title="just kidding, open coord://widget/1?animated"/>
+                                <connections>
+                                    <action selector="openAnimatedURL:" destination="ESb-XQ-Fat" eventType="touchUpInside" id="926-qT-jHZ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Y0a-Aj-jL2" firstAttribute="centerX" secondItem="TVm-UD-uCa" secondAttribute="centerX" id="GkW-wH-SdM"/>
+                            <constraint firstItem="zUq-ZB-dvc" firstAttribute="centerX" secondItem="TVm-UD-uCa" secondAttribute="centerX" id="NhN-eg-Hg7"/>
+                            <constraint firstItem="zUq-ZB-dvc" firstAttribute="centerY" secondItem="TVm-UD-uCa" secondAttribute="centerY" id="R4z-Xm-2x4"/>
+                            <constraint firstItem="Y0a-Aj-jL2" firstAttribute="top" secondItem="zUq-ZB-dvc" secondAttribute="bottom" constant="8" id="XDk-5z-jyd"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="1r7-ai-tS1">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="IKi-aR-l2W"/>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PZS-tv-6A5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1380" y="457"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="a5t-3q-heQ">
+            <objects>
+                <navigationController storyboardIdentifier="NavigationController" automaticallyAdjustsScrollViewInsets="NO" id="N6g-rF-WcO" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mo2-cU-0uS">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="ESb-XQ-Fat" kind="relationship" relationship="rootViewController" id="ivp-w4-qgd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gAV-3N-GyB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="568" y="457"/>
+        </scene>
+    </scenes>
+</document>
