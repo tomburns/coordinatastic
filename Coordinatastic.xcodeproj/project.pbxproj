@@ -7,25 +7,55 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F35011E1CD3EAAC0085137E /* CreateWidgetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F35011D1CD3EAAC0085137E /* CreateWidgetViewController.swift */; };
+		1F3501211CD3EAE30085137E /* CreateWidget.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F3501201CD3EAE30085137E /* CreateWidget.storyboard */; };
+		1F3501231CD3EB890085137E /* CreateWidgetFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3501221CD3EB890085137E /* CreateWidgetFlowCoordinator.swift */; };
+		1F3501271CD40B140085137E /* AppDestination.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F3501261CD40B140085137E /* AppDestination.swift */; };
 		1F655D611CD3C6BB005A4C82 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F655D601CD3C6BB005A4C82 /* AppDelegate.swift */; };
-		1F655D631CD3C6BB005A4C82 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F655D621CD3C6BB005A4C82 /* FirstViewController.swift */; };
+		1F655D631CD3C6BB005A4C82 /* WidgetListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F655D621CD3C6BB005A4C82 /* WidgetListViewController.swift */; };
 		1F655D651CD3C6BB005A4C82 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F655D641CD3C6BB005A4C82 /* SecondViewController.swift */; };
 		1F655D681CD3C6BB005A4C82 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F655D661CD3C6BB005A4C82 /* Main.storyboard */; };
 		1F655D6A1CD3C6BB005A4C82 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1F655D691CD3C6BB005A4C82 /* Assets.xcassets */; };
 		1F655D6D1CD3C6BB005A4C82 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F655D6B1CD3C6BB005A4C82 /* LaunchScreen.storyboard */; };
+		1F655D891CD3D9F0005A4C82 /* AppFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F655D881CD3D9F0005A4C82 /* AppFlowCoordinator.swift */; };
+		1F655D8B1CD3DA0B005A4C82 /* FlowCoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F655D8A1CD3DA0B005A4C82 /* FlowCoordinatorType.swift */; };
+		1F655D8D1CD3DA15005A4C82 /* WidgetsFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F655D8C1CD3DA15005A4C82 /* WidgetsFlowCoordinator.swift */; };
+		1F655D901CD3DA1B005A4C82 /* Widgets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F655D8E1CD3DA1B005A4C82 /* Widgets.storyboard */; };
+		1F655D931CD3DA20005A4C82 /* Sprockets.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1F655D911CD3DA20005A4C82 /* Sprockets.storyboard */; };
+		1F655D951CD3DA6B005A4C82 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F655D941CD3DA6B005A4C82 /* R.generated.swift */; };
+		1F655D981CD3DB39005A4C82 /* SprocketsFlowCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F655D971CD3DB39005A4C82 /* SprocketsFlowCoordinator.swift */; };
+		1FCA48C31CD3DD70006117F1 /* WidgetDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA48C21CD3DD70006117F1 /* WidgetDetailViewController.swift */; };
+		1FCA48C61CD3DE3E006117F1 /* Widget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA48C51CD3DE3E006117F1 /* Widget.swift */; };
+		1FCA48CA1CD3DF68006117F1 /* WidgetDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA48C91CD3DF68006117F1 /* WidgetDetailViewModel.swift */; };
+		1FCA48CD1CD3DFE1006117F1 /* WidgetController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FCA48CC1CD3DFE1006117F1 /* WidgetController.swift */; };
 		3690C9AE3AB750796C962980 /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 754188852D4711DB4D7605EE /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		0FDA4799F26F74F6CCAD7C69 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		1F35011D1CD3EAAC0085137E /* CreateWidgetViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateWidgetViewController.swift; sourceTree = "<group>"; };
+		1F3501201CD3EAE30085137E /* CreateWidget.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = CreateWidget.storyboard; sourceTree = "<group>"; };
+		1F3501221CD3EB890085137E /* CreateWidgetFlowCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateWidgetFlowCoordinator.swift; sourceTree = "<group>"; };
+		1F3501261CD40B140085137E /* AppDestination.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDestination.swift; sourceTree = "<group>"; };
 		1F655D5D1CD3C6BB005A4C82 /* Coordinatastic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Coordinatastic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1F655D601CD3C6BB005A4C82 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		1F655D621CD3C6BB005A4C82 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		1F655D621CD3C6BB005A4C82 /* WidgetListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidgetListViewController.swift; sourceTree = "<group>"; };
 		1F655D641CD3C6BB005A4C82 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		1F655D671CD3C6BB005A4C82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1F655D691CD3C6BB005A4C82 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1F655D6C1CD3C6BB005A4C82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1F655D6E1CD3C6BB005A4C82 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1F655D881CD3D9F0005A4C82 /* AppFlowCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppFlowCoordinator.swift; sourceTree = "<group>"; };
+		1F655D8A1CD3DA0B005A4C82 /* FlowCoordinatorType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowCoordinatorType.swift; sourceTree = "<group>"; };
+		1F655D8C1CD3DA15005A4C82 /* WidgetsFlowCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetsFlowCoordinator.swift; sourceTree = "<group>"; };
+		1F655D8F1CD3DA1B005A4C82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Widgets.storyboard; sourceTree = "<group>"; };
+		1F655D921CD3DA20005A4C82 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Sprockets.storyboard; sourceTree = "<group>"; };
+		1F655D941CD3DA6B005A4C82 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = R.generated.swift; sourceTree = SOURCE_ROOT; };
+		1F655D971CD3DB39005A4C82 /* SprocketsFlowCoordinator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SprocketsFlowCoordinator.swift; sourceTree = "<group>"; };
+		1FCA48C21CD3DD70006117F1 /* WidgetDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetDetailViewController.swift; sourceTree = "<group>"; };
+		1FCA48C51CD3DE3E006117F1 /* Widget.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Widget.swift; sourceTree = "<group>"; };
+		1FCA48C91CD3DF68006117F1 /* WidgetDetailViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetDetailViewModel.swift; sourceTree = "<group>"; };
+		1FCA48CC1CD3DFE1006117F1 /* WidgetController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WidgetController.swift; sourceTree = "<group>"; };
 		754188852D4711DB4D7605EE /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6E58BB752076CEE0F5FF0E3 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -42,6 +72,34 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F35011F1CD3EAD00085137E /* Create Widget */ = {
+			isa = PBXGroup;
+			children = (
+				1F3501201CD3EAE30085137E /* CreateWidget.storyboard */,
+				1F3501221CD3EB890085137E /* CreateWidgetFlowCoordinator.swift */,
+				1F3501251CD400CF0085137E /* View */,
+			);
+			name = "Create Widget";
+			sourceTree = "<group>";
+		};
+		1F3501241CD3EDC10085137E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				1F655D8E1CD3DA1B005A4C82 /* Widgets.storyboard */,
+				1FCA48C71CD3DF48006117F1 /* View */,
+				1FCA48C81CD3DF52006117F1 /* View Model */,
+			);
+			name = Main;
+			sourceTree = "<group>";
+		};
+		1F3501251CD400CF0085137E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1F35011D1CD3EAAC0085137E /* CreateWidgetViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
 		1F655D541CD3C6BB005A4C82 = {
 			isa = PBXGroup;
 			children = (
@@ -63,15 +121,82 @@
 		1F655D5F1CD3C6BB005A4C82 /* Coordinatastic */ = {
 			isa = PBXGroup;
 			children = (
-				1F655D601CD3C6BB005A4C82 /* AppDelegate.swift */,
-				1F655D621CD3C6BB005A4C82 /* FirstViewController.swift */,
-				1F655D641CD3C6BB005A4C82 /* SecondViewController.swift */,
-				1F655D661CD3C6BB005A4C82 /* Main.storyboard */,
+				1F655D871CD3D9D1005A4C82 /* App */,
+				1F655D861CD3D9CF005A4C82 /* Widgets */,
+				1F655D851CD3D9CD005A4C82 /* Sprockets */,
 				1F655D691CD3C6BB005A4C82 /* Assets.xcassets */,
 				1F655D6B1CD3C6BB005A4C82 /* LaunchScreen.storyboard */,
 				1F655D6E1CD3C6BB005A4C82 /* Info.plist */,
 			);
 			path = Coordinatastic;
+			sourceTree = "<group>";
+		};
+		1F655D851CD3D9CD005A4C82 /* Sprockets */ = {
+			isa = PBXGroup;
+			children = (
+				1F655D911CD3DA20005A4C82 /* Sprockets.storyboard */,
+				1F655D971CD3DB39005A4C82 /* SprocketsFlowCoordinator.swift */,
+				1F655D641CD3C6BB005A4C82 /* SecondViewController.swift */,
+			);
+			name = Sprockets;
+			sourceTree = "<group>";
+		};
+		1F655D861CD3D9CF005A4C82 /* Widgets */ = {
+			isa = PBXGroup;
+			children = (
+				1F655D8C1CD3DA15005A4C82 /* WidgetsFlowCoordinator.swift */,
+				1FCA48C41CD3DE33006117F1 /* Model */,
+				1F3501241CD3EDC10085137E /* Main */,
+				1F35011F1CD3EAD00085137E /* Create Widget */,
+			);
+			name = Widgets;
+			sourceTree = "<group>";
+		};
+		1F655D871CD3D9D1005A4C82 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				1F655D941CD3DA6B005A4C82 /* R.generated.swift */,
+				1F655D661CD3C6BB005A4C82 /* Main.storyboard */,
+				1F655D601CD3C6BB005A4C82 /* AppDelegate.swift */,
+				1F655D881CD3D9F0005A4C82 /* AppFlowCoordinator.swift */,
+				1F3501261CD40B140085137E /* AppDestination.swift */,
+				1F655D961CD3DAEF005A4C82 /* FlowCoordinatorTypes */,
+			);
+			name = App;
+			sourceTree = "<group>";
+		};
+		1F655D961CD3DAEF005A4C82 /* FlowCoordinatorTypes */ = {
+			isa = PBXGroup;
+			children = (
+				1F655D8A1CD3DA0B005A4C82 /* FlowCoordinatorType.swift */,
+			);
+			name = FlowCoordinatorTypes;
+			sourceTree = "<group>";
+		};
+		1FCA48C41CD3DE33006117F1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1FCA48C51CD3DE3E006117F1 /* Widget.swift */,
+				1FCA48CC1CD3DFE1006117F1 /* WidgetController.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		1FCA48C71CD3DF48006117F1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1F655D621CD3C6BB005A4C82 /* WidgetListViewController.swift */,
+				1FCA48C21CD3DD70006117F1 /* WidgetDetailViewController.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		1FCA48C81CD3DF52006117F1 /* View Model */ = {
+			isa = PBXGroup;
+			children = (
+				1FCA48C91CD3DF68006117F1 /* WidgetDetailViewModel.swift */,
+			);
+			name = "View Model";
 			sourceTree = "<group>";
 		};
 		87F77F5AAF78111502822975 /* Pods */ = {
@@ -153,8 +278,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1F3501211CD3EAE30085137E /* CreateWidget.storyboard in Resources */,
+				1F655D901CD3DA1B005A4C82 /* Widgets.storyboard in Resources */,
 				1F655D6D1CD3C6BB005A4C82 /* LaunchScreen.storyboard in Resources */,
 				1F655D6A1CD3C6BB005A4C82 /* Assets.xcassets in Resources */,
+				1F655D931CD3DA20005A4C82 /* Sprockets.storyboard in Resources */,
 				1F655D681CD3C6BB005A4C82 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -227,9 +355,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1FCA48CA1CD3DF68006117F1 /* WidgetDetailViewModel.swift in Sources */,
+				1F35011E1CD3EAAC0085137E /* CreateWidgetViewController.swift in Sources */,
+				1F655D8B1CD3DA0B005A4C82 /* FlowCoordinatorType.swift in Sources */,
+				1F655D951CD3DA6B005A4C82 /* R.generated.swift in Sources */,
+				1F655D891CD3D9F0005A4C82 /* AppFlowCoordinator.swift in Sources */,
+				1FCA48C31CD3DD70006117F1 /* WidgetDetailViewController.swift in Sources */,
+				1FCA48CD1CD3DFE1006117F1 /* WidgetController.swift in Sources */,
+				1F655D981CD3DB39005A4C82 /* SprocketsFlowCoordinator.swift in Sources */,
 				1F655D651CD3C6BB005A4C82 /* SecondViewController.swift in Sources */,
 				1F655D611CD3C6BB005A4C82 /* AppDelegate.swift in Sources */,
-				1F655D631CD3C6BB005A4C82 /* FirstViewController.swift in Sources */,
+				1FCA48C61CD3DE3E006117F1 /* Widget.swift in Sources */,
+				1F655D8D1CD3DA15005A4C82 /* WidgetsFlowCoordinator.swift in Sources */,
+				1F3501231CD3EB890085137E /* CreateWidgetFlowCoordinator.swift in Sources */,
+				1F655D631CD3C6BB005A4C82 /* WidgetListViewController.swift in Sources */,
+				1F3501271CD40B140085137E /* AppDestination.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -250,6 +390,22 @@
 				1F655D6C1CD3C6BB005A4C82 /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		1F655D8E1CD3DA1B005A4C82 /* Widgets.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F655D8F1CD3DA1B005A4C82 /* Base */,
+			);
+			name = Widgets.storyboard;
+			sourceTree = "<group>";
+		};
+		1F655D911CD3DA20005A4C82 /* Sprockets.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				1F655D921CD3DA20005A4C82 /* Base */,
+			);
+			name = Sprockets.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
